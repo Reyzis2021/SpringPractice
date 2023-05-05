@@ -1,12 +1,14 @@
 package com.edu.spring.listener.entity;
 
-import org.springframework.stereotype.Component;
+
+import lombok.Getter;
 
 import java.util.EventObject;
 
-@Component
+
 public class EntityEvent extends EventObject {
 
+    @Getter
     private final AccessType accessType;
 
     public EntityEvent(Object entity, AccessType accessType) {
@@ -14,7 +16,4 @@ public class EntityEvent extends EventObject {
         this.accessType = accessType;
     }
 
-    public AccessType getAccessType() {
-        return accessType;
-    }
 }
