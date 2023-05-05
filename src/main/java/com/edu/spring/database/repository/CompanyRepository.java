@@ -6,6 +6,7 @@ import com.edu.spring.bpp.Transaction;
 import com.edu.spring.database.entity.Company;
 import com.edu.spring.database.pool.ConnectionPool;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,6 +21,7 @@ import java.util.Optional;
 @Auditing
 @Component
 @RequiredArgsConstructor
+@Slf4j
 public class CompanyRepository implements CrudRepository<Integer, Company> {
 
 
@@ -30,7 +32,7 @@ public class CompanyRepository implements CrudRepository<Integer, Company> {
 
     @PostConstruct
     private void init() {
-        System.out.println("init company repository");
+        log.info("init company repository");
     }
 
     @Override
@@ -41,7 +43,7 @@ public class CompanyRepository implements CrudRepository<Integer, Company> {
 
     @Override
     public void delete(Company entity) {
-        System.out.println("delete method...");
+        log.info("delete method...");
     }
 
 
